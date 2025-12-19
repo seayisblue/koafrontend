@@ -1,0 +1,44 @@
+
+.bi-sized-box {
+  width: 100%;
+  height: 20px;
+}
+
+.bi-head {
+  font-size: var(--title-font-size);
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-block-start: 32px;
+  margin-block-end: 16px;
+  letter-spacing: 1px;
+}
+
+.bi-title {
+  font-size: var(--sub-title-font-size);
+  font-weight: 700;
+  color: var(--main-text);
+  padding-block-end: 12px;
+}
+
+.bi-desc {
+  font-size: var(--btn-font-size);
+  color: var(--main-note);
+  margin-block-start: -10px;
+  margin-block-end: 12px;
+}
+
+.bi-content {
+  width: 100%;
+  position: relative;
+  margin-block-end: 32px;
+}
+
+.bi-sized-box_two {
+  width: 100%;
+  height: 16px;
+}
+
+.bi-sized-box_three {
+  width: 100%;
+  height: 48px;
+}
