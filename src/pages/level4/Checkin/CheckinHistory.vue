@@ -4,6 +4,7 @@ import { useRouteAndLiuRouter } from '~/routes/liu-router';
 import liuApi from '~/utils/liu-api';
 import type { CalendarInstance } from 'element-plus';
 
+
 const doctorImg = "/figma/doctor.png"; 
 const rr = useRouteAndLiuRouter();
 const CACHE_KEY = 'user_checkin_record';
@@ -44,7 +45,6 @@ const currentMonthLabel = computed(() => {
 
 // 判断日期状态
 const getDateStatus = (date: Date) => {
-  // 格式化为 YYYY-M-D，注意 month+1
   const dateStr = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
   
   // 1. 如果在历史记录里 -> 成功
@@ -56,7 +56,7 @@ const getDateStatus = (date: Date) => {
   const today = new Date();
   // 只处理过去的时间
   if (date < today && date.getDate() !== today.getDate()) {
-    // 假数据逻辑：
+    // 假数据逻辑：   ！需要后端修改！
     const day = date.getDate();
     if (day % 7 === 0) return 'unwell'; // 逢7感到不适
     if (day % 5 === 0) return 'partial'; // 逢5部分完成

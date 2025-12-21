@@ -302,6 +302,16 @@
     "start": "开始",
     "plz_speak": "🗣️ 请汇报"
   },
+  "lose-weight-advice": {
+    "title": "减重建议",
+    "advice": "建议控制体重",
+    "tip-for-obesity-title": "小提示",
+    "tip-for-obesity-content-1": "推荐就诊",
+    "tip-for-obesity-content-2": "四川大学华西医院肥胖专病门诊",
+    "additional-advice-for-preobesity": "饮食可减少1/3的摄入",
+    "tip-for-preobesity-content-1": "为您推荐何成奇教授",
+    "tip-for-preobesity-content-2": "下方为二维码"
+  },
   "light-rehab": {
     "title_1": "轻度康复方案",
     "title_2": "中度康复方案",

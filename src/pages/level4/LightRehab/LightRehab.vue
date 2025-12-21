@@ -3,8 +3,8 @@ import { onActivated } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouteAndLiuRouter } from '~/routes/liu-router';
 import liuUtil from '~/utils/liu-util';
-import { medicalOption, loseWeightOption, MRIOption, XRayOption } from './tools/types';
-import { filter, needLoseWeightPlan, needMRIPlan, needXRayPlan } from './tools/scripts';
+import { medicalOption, MRIOption, XRayOption } from './tools/types';
+import { filter, needMRIPlan, needXRayPlan } from './tools/scripts';
 
 const runImg = "/figma/running.png";
 const balanceImg = "/figma/balance.png";
@@ -105,18 +105,6 @@ const onSelectOption = (key: string) => {
           </div>
         </template>
       </template>
-
-      <div v-if="needLoseWeightPlan()" class="glass-card">
-        <div class="card-img-box">
-          <span style="font-size: 64px;">{{ loseWeightOption.icon }}</span>
-        </div>
-        <div class="card-desc">{{ t('light-rehab.desc-lose-weight') }}</div>
-        <div class="card-btn-area">
-          <button class="action-btn" @click="onSelectOption(loseWeightOption.key)">
-            {{ t('light-rehab.option-lose-weight') }}
-          </button>
-        </div>
-      </div>
 
       <div v-if="needMRIPlan()" class="glass-card">
         <div class="card-img-box">

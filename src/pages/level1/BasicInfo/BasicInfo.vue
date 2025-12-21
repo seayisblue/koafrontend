@@ -8,6 +8,12 @@ import ButtonList from "~/components/ButtonList/ButtonList.vue";
 const { biData, onTapNext, onTapBack } = useBasicInfo()
 const { t } = useI18n()
 
+const disabledAfterToday = (date: Date) => {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0) 
+  return date > today 
+}
+
 </script>
 <template>
 
@@ -110,6 +116,7 @@ const { t } = useI18n()
         style="width: 100%;"
         class="custom-date-picker"
         :editable="false"
+        :disabled-date="disabledAfterToday"
       />
     </div>
 
@@ -175,6 +182,6 @@ const { t } = useI18n()
   .el-input__prefix {
     display: none; 
   }
-}
 
+}
 </style>

@@ -1,20 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import { useRouteAndLiuRouter } from '~/routes/liu-router';
 import { useTugResult } from './tools/useTugResult';
-import { medicalPlan } from './tools/scripts';
 
 const { t } = useI18n()
-const rr = useRouteAndLiuRouter()
-const tugData = useTugResult()
-
-const onTapNext = () => {
-  let plan = medicalPlan()
-  rr.router.push({
-    name: "light-rehab",
-    query: { plan }
-  })
-}
+const { tugData, onTapNext } = useTugResult()
 
 </script>
 <template>

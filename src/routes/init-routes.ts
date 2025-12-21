@@ -20,6 +20,7 @@ const TugResult = () => import("../pages/level2/TugResult/TugResult.vue")
 const VideoStart = () => import("../pages/level3/VideoStart/VideoStart.vue")
 const VideoBox = () => import("../pages/level3/VideoBox/VideoBox.vue")
 const VideoQuestion = () => import("../pages/level3/VideoQuestion/VideoQuestion.vue")
+const LoseWeightAdvice = () => import("../pages/level4/LightRehab/LoseWeightAdvice.vue")
 const LightRehab = () => import("../pages/level4/LightRehab/LightRehab.vue")
 const MildAerobic = () => import("../pages/level4/MildAerobic/MildAerobic.vue")
 const MildAerobicSelect = () => import("../pages/level4/MildAerobic/MildAerobicSelect.vue")
@@ -39,6 +40,7 @@ const SevereNeuroSelect = () => import("../pages/level4/SevereNeuro/SevereNeuroS
 const SevereNeuroDetail = () => import("../pages/level4/SevereNeuro/SevereNeuroDetail.vue")
 const SevereNeuroVideo = () => import("../pages/level4/SevereNeuro/SevereNeuroVideo.vue")
 const SevereNeuroComplete = () => import("../pages/level4/SevereNeuro/SevereNeuroComplete.vue")
+const KneeMap = () => import("../pages/level5/KneeMap.vue")
 
 const MildAerobic_v2 = () => import('~/pages/level4/MildAerobic/MildAerobic.vue')
 const StatusCheck = () => import('~/pages/level5/StatusCheck/StatusCheck.vue');
@@ -217,7 +219,14 @@ export const routes: Array<RouteRecordRaw> = [
     name: "ae-video-question",
     meta: {},
   },
-
+  {
+    path: "/lose-weight-advice",
+    components: {
+      default: LoseWeightAdvice,
+    },
+    name: "lose-weight-advice",
+    meta: {},
+  },
   {
     path: "/light-rehab",
     components: {
@@ -242,7 +251,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: "mild-aerobic-select",
     meta: {},
   },
-   {
+  {
     path: "/mild-aerobic/check",
     components: {
       default: Checkpage,
@@ -266,7 +275,7 @@ export const routes: Array<RouteRecordRaw> = [
     name: "moderate-aerobic-select",
     meta: {},
   },
-   {
+  {
     path: "/moderate-aerobic/check",
     components: {
       default: Checkpage,
@@ -432,6 +441,14 @@ export const routes: Array<RouteRecordRaw> = [
     default: Checkpage,
   },
   name: "checkin-page",
+  meta: {},
+},
+{
+  path: "/knee-map",
+  components: {
+    default: KneeMap,
+  },
+  name: "knee-map",
   meta: {},
 },
 
