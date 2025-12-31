@@ -1,4 +1,4 @@
-import { reactive } from "vue";
+import { onActivated, reactive } from "vue";
 import type { TugData } from "../../TugCollect/tools/types";
 import { usePageShared } from "~/pages/shared/usePageShared";
 import { useKoaLevel2 } from "~/pages/shared/useKoaSaved";
@@ -42,7 +42,9 @@ export function useTugResult() {
     videoSrc: "",
     time: 0,
   });
-  useKoaLevel2(tugData, "tug-collect");
+  onActivated(() => {
+    useKoaLevel2(tugData, "tug-collect");
+  })
   
   return {
     tugData,

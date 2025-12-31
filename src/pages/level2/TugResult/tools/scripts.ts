@@ -9,8 +9,10 @@ import type { TugData } from "../../TugCollect/tools/types";
 
 export function readBMI(): number {
   const biData = KoaController.getLevel1Data<BiData>("basic-info");
-  const bmi = Number(biData?.BMI);
-  return bmi;
+  if (biData)
+    return biData.BMI;
+  else
+    return -1;
 }
 
 export function categoryOnBMI(bmi: number) {
@@ -74,7 +76,7 @@ export function medicalPlan(): string {
   const mhData = KoaController.getLevel1Data<MhData>("medical-history");
   const tcData = KoaController.getLevel2Data<TcData>("touch-collect");
   const tugData = KoaController.getLevel2Data<TugData>("tug-collect");
-  const score = ScoreController.getScore();
+  const score = ScoreController.getOverallScore();
 
   /**
    * 未做过检查
@@ -85,8 +87,8 @@ export function medicalPlan(): string {
   if (noLabTest(ltData) && ccData != undefined && mhData != undefined) {
     const hasJointStiff = (ccData.joint_stiffness === 1);
     const hasKneeObs = ccData.knee_observations?.[2]?.selected;
-    const hasHistory1 = mhData.list1?.[0]?.selected;
-    const hasHistory2 = mhData.list1?.[1]?.selected;
+    const hasHistory1 = mhData.list1?.[2]?.selected;
+    const hasHistory2 = mhData.list1?.[3]?.selected;
 
     if (hasJointStiff || hasKneeObs || hasHistory1 || hasHistory2) {
       return "serious";

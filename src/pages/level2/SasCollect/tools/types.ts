@@ -7,3 +7,7 @@ export interface SasItem {
 export interface SasData {
   list: SasItem[]
 }
+
+export interface SAS {
+  SAS: number[]
+}

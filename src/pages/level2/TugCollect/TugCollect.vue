@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from "vue-i18n";
 import { useTugCollect } from "./tools/useTugCollect"
-import { feedback } from "./tools/scripts"
 
 const { tugData, onTapBack, onTapNext } = useTugCollect()
 const { t } = useI18n()
@@ -55,9 +54,6 @@ const { t } = useI18n()
     </div>
     <div class="bi-content">
       <CustomInput v-model="tugData.time" type="number"></CustomInput>
-    </div>
-    <div class="liu-no-select bi-desc">
-      <span>{{feedback(tugData.time)}}</span>
     </div>
 
     <div class="bi-sized-box_two"></div>

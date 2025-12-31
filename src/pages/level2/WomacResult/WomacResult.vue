@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import { useWomacResult } from './tools/useWomacResult';
-import { useRouteAndLiuRouter } from '~/routes/liu-router';
 
 const { t } = useI18n()
-const { wrData } = useWomacResult()
-const rr = useRouteAndLiuRouter()
+const { wrData, onTapNext } = useWomacResult()
 
 </script>
 <template>
@@ -35,7 +33,7 @@ const rr = useRouteAndLiuRouter()
         <span>{{ t("womac-result.klMetric") }}</span>
       </div>
 
-      <CustomButton @click="rr.router.push({ name: 'sas-home' })">
+      <CustomButton @click="onTapNext">
         <span>{{ t("womac-result.next_step") }}</span>
       </CustomButton>
 
